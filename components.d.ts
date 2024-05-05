@@ -11,6 +11,9 @@ declare module 'vue' {
     Cover: typeof import('./src/components/Cover.vue')['default']
     PictorialComposition: typeof import('./src/components/PictorialComposition.vue')['default']
     PrintIconBook: typeof import('~icons/print-icon/book')['default']
+    PrintIconPrinter: typeof import('~icons/print-icon/printer')['default']
+    PrintIconPublishingBook: typeof import('~icons/print-icon/publishing-book')['default']
+    PrintIconScreen: typeof import('~icons/print-icon/screen')['default']
     PrintPreview: typeof import('./src/components/PrintPreview.vue')['default']
   }
 }

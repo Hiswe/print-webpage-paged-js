@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@unocss/reset':
+        specifier: ^0.59.4
+        version: 0.59.4
       pagedjs:
         specifier: ^0.4.3
         version: 0.4.3

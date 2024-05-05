@@ -17,6 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@unocss/reset": "^0.59.4",
     "pagedjs": "^0.4.3",
     "vue": "^3.4.26"
   },
