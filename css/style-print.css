@@ -1,0 +1,92 @@
+@media print {
+
+    /* Size and marin for all pages ------------- */
+    @page {
+        size: 148mm 210mm;
+        margin-top: 20mm;
+        margin-bottom: 20mm;
+    }  
+
+
+    /* LEFT PAGES -------------------------------- */
+
+    @page:left {
+        margin-left: 10mm;
+        margin-right: 30mm;
+        @bottom-left {
+            content: counter(page);
+            width: 40px;
+        }
+        @bottom-center{
+            content: "Printing in relation to graphic art";
+            text-align: left;
+        }
+    }
+
+
+    /* RIGHT PAGES -------------------------------- */
+
+    @page:right {
+        margin-left: 30mm;
+        margin-right: 10mm;
+        @bottom-right {
+            content: counter(page);
+            width: 40px;
+        }
+        @bottom-center{
+            content: string(chapTitle);
+            text-align: right;
+        }
+    }
+
+    .chapter  h1 { string-set: chapTitle content(text); }
+
+
+
+    /* BLANK PAGES -------------------------------- */
+
+    @page:blank {
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+    }
+
+
+
+    /* COUVERTURE -------------------------------- */
+
+    @page:first{
+        margin: 10mm 10mm;
+        background-color: rgb(20, 121, 253);
+        @bottom-right { content: none; }
+    }
+
+    #cover { 
+        break-after: right; 
+        font-family: 'Open Sans';
+    }
+
+    #cover img{
+        mix-blend-mode: lighten;
+    }
+
+
+
+    /* SECTION BREAKS -------------------------------- */
+
+    .chapter {
+        break-before: right;
+    }
+
+
+
+    /* CONTENT --------------------------------------- */
+
+    figure, img{
+        width: 100%;
+    }
+
+
+}
+
+

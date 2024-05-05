@@ -1,0 +1,11 @@
+#content{
+    padding: 20px;
+}
+
+#cover h1 {
+    font-family: 'Open Sans';
+}
+
+img{
+    max-width: 400px;
+}
