@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Previewer } from 'pagedjs';
+import { Handler, Previewer } from 'pagedjs';
 
 defineSlots<{
   default: () => any
@@ -28,11 +28,20 @@ function onPrintPreview() {
     bookContentRef.value,
   );
   isOnPreview.value = true;
+  return previewer;
 }
 
 function onPrint() {
-  if (!isOnPreview.value) onPrintPreview();
-  // window.print();
+  if (isOnPreview.value) return window.print(); ;
+  const previewer = onPrintPreview();
+  if (!previewer) return;
+  previewer.registerHandlers(
+    class PreviewHandler extends Handler {
+      afterPreview() {
+        window.print();
+      }
+    },
+  );
 }
 </script>
 
@@ -40,19 +49,19 @@ function onPrint() {
   <div>
     <aside class="fixed top-4 end-4 print:hidden">
       <ul class="flex flex-col gap-4">
-        <li class="flex flex-row-reverse items-center">
+        <li class="flex flex-row-reverse items-center gap-2">
           <button class="peer rounded-2 border border-3 bg-white text-indigo hover:text-indigo-8 border-current p-1" @click="onWebVersion">
             <PrintIconScreen class="size-8" />
           </button>
           <span class="hidden peer-hover:block text-indigo-8 font-semibold">version numérique</span>
         </li>
-        <li class="flex flex-row-reverse items-center">
+        <li class="flex flex-row-reverse items-center gap-2">
           <button class="peer rounded-2 border border-3 bg-white text-indigo hover:text-indigo-8 border-current p-1" @click="onPrintPreview">
             <PrintIconBook class="size-8" />
           </button>
           <span class="hidden peer-hover:block text-indigo-8 font-semibold">aperçu impression</span>
         </li>
-        <li class="flex flex-row-reverse items-center">
+        <li class="flex flex-row-reverse items-center gap-2">
           <button class="peer rounded-2 border border-3 bg-white text-indigo hover:text-indigo-8 border-current p-1">
             <PrintIconPrinter class="size-8" @click="onPrint" />
           </button>
