@@ -1,0 +1,11 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "types": [
+      "node"
+    ]
+  }
+}
