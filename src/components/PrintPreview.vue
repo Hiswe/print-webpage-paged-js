@@ -1,16 +1,9 @@
 <script setup lang="ts">
-// eslint-disable-next-line ts/ban-ts-comment
-// @ts-expect-error
 import { Previewer } from 'pagedjs';
 
 defineSlots<{
   default: () => any
 }>();
-
-interface PreviewerClass {
-  constructor: () => void
-  preview: (content: string, cssFiles: Array<string>, element: HTMLElement) => void
-}
 
 const contentRef = ref<HTMLElement>();
 const bookContentRef = ref<HTMLElement>();
@@ -26,7 +19,7 @@ function onPrintPreview() {
   if (contentRef.value == null || bookContentRef.value == null) return;
   const content = contentRef.value.innerHTML;
   bookContentRef.value.innerHTML = ``;
-  const previewer: PreviewerClass = new Previewer();
+  const previewer = new Previewer();
   previewer.preview(
     content,
     // We need to keep css from public directory :(

@@ -1,8 +1,11 @@
 declare module "pagedjs" {
-  interface Previewer {
-    constructor: () => void
-    preview: (content: string, cssFiles: Array<string>, element: HTMLElement) => void
+  export class Handler {
+    afterPreview: () => void;
   }
 
-  export = { Previewer };
+  export class Previewer {
+    constructor();
+    registerHandlers: (handler: Handler) => void;
+    preview: (content: string, cssFiles: Array<string>, element: HTMLElement) => void;
+  };
 }
