@@ -24,6 +24,8 @@ function onPrintPreview() {
     content,
     // We need to keep css from public directory :(
     // importing with ?url will return an URL to a JS file :(
+    // It might be possible to inject the content of the CSS. See
+    // https://gitlab.coko.foundation/pagedjs/pagedjs/-/blob/main/examples/polisher.html?ref_type=heads
     [`style-print.css`],
     bookContentRef.value,
   );
