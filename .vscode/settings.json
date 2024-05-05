@@ -1,0 +1,70 @@
+{
+  "files.associations": {
+    ".env.*": "env"
+  },
+  "unocss.root": ".",
+
+  "css.lint.unknownAtRules": "ignore",
+
+  // https://github.com/antfu/eslint-config#vs-code-support-auto-fix
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "json",
+    "jsonc"
+  ],
+
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "color": "hotpink",
+      "backgroundColor": "darkmagenta",
+      "overviewRulerColor": "grey"
+    }
+  ],
+  "todohighlight.include": [
+    "**/*.vue",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "packmind.feature.disableSuggestion": true,
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "Unocss",
+    "unplugin",
+    "Vuetify"
+  ]
+}

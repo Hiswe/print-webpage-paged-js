@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
+  "author": "Yannick Aïvayan",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "engines": {
     "node": ">=22.0",
@@ -13,9 +16,6 @@
     "start": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "vue": "^3.4.26"
   },
