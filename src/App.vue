@@ -4,8 +4,10 @@
 
 <template>
   <main class="min-h-svh">
-    <Cover />
-    <ArtInPrinting />
-    <PictorialComposition />
+    <PrintPreview>
+      <Cover />
+      <ArtInPrinting />
+      <PictorialComposition />
+    </PrintPreview>
   </main>
 </template>

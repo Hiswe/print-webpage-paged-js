@@ -10,5 +10,7 @@ declare module 'vue' {
     ArtInPrinting: typeof import('./src/components/ArtInPrinting.vue')['default']
     Cover: typeof import('./src/components/Cover.vue')['default']
     PictorialComposition: typeof import('./src/components/PictorialComposition.vue')['default']
+    PrintIconBook: typeof import('~icons/print-icon/book')['default']
+    PrintPreview: typeof import('./src/components/PrintPreview.vue')['default']
   }
 }
