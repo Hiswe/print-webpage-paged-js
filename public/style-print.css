@@ -57,7 +57,7 @@
 
     @page:first{
         margin: 10mm 10mm;
-        background-color: red;
+        background-color: blue;
         @bottom-right { content: none; }
     }
 
