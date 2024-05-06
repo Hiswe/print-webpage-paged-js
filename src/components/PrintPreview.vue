@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import type { Chunker, Polisher } from 'pagedjs';
 import { Handler, Previewer } from 'pagedjs';
+
+import StylePrint from '~/assets/style-print.css?raw';
 
 defineSlots<{
   default: () => any
@@ -22,11 +25,7 @@ function onPrintPreview() {
   const previewer = new Previewer();
   previewer.preview(
     content,
-    // We need to keep css from public directory :(
-    // importing with ?url will return an URL to a JS file :(
-    // It might be possible to inject the content of the CSS. See
-    // https://gitlab.coko.foundation/pagedjs/pagedjs/-/blob/main/examples/polisher.html?ref_type=heads
-    [`style-print.css`],
+    [{ 'book.css': StylePrint }],
     bookContentRef.value,
   );
   isOnPreview.value = true;
@@ -39,6 +38,10 @@ function onPrint() {
   if (!previewer) return;
   previewer.registerHandlers(
     class PreviewHandler extends Handler {
+      constructor(chunker: Chunker, polisher: Polisher, caller: any) {
+        super(chunker, polisher, caller);
+      }
+
       afterPreview() {
         window.print();
       }

@@ -63,6 +63,7 @@
   "packmind.feature.disableSuggestion": true,
   "editor.tabSize": 2,
   "cSpell.words": [
+    "Chunker",
     "Unocss",
     "unplugin",
     "Vuetify"
